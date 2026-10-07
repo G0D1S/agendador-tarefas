@@ -16,7 +16,7 @@ public class TarefasEntity {
 
     @Id
     private String id;
-    private String nomeTrefa;
+    private String nomeTarefa;
     private String descricao;
     private LocalDateTime dataCriacao; // data e hora // localDate é apenas data
     private LocalDateTime dataEvento;

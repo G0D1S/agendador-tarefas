@@ -12,12 +12,14 @@ import java.time.LocalDateTime;
 @Builder
 public class TarefasDTO {
     private String id;
-    private String nomeTrefa;
+    private String nomeTarefa;
     private String descricao;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dataCriacao; // data e hora // localDate é apenas data
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dataEvento;
     private String emailUsuario;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dataAlteracao;
     private StatusNotificacaoEnum statusNotificacaoEnum;
 }
