@@ -1,14 +1,11 @@
 package com.igor.agendadortarefa.infrastructure.security;
 
 
-import com.Igor.usuario.infrastructure.entity.Usuario;
-import com.Igor.usuario.infrastructure.repository.UsuarioRepository;
 import com.igor.agendadortarefa.business.dto.UsuarioDTO;
 import com.igor.agendadortarefa.infrastructure.security.client.UsuarioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
