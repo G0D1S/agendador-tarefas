@@ -37,4 +37,13 @@ public class TarefasControler {
         List<TarefasDTO> tarefas = tarefasService.buscaTarefasPorEmail( token);
         return ResponseEntity.ok(tarefas);
     }
+
+    public ResponseEntity<Void> deletaTarefaPorID (@RequestParam("id") String id){
+
+        tarefasService.deletaTarefaPorID(id);
+
+        return ResponseEntity.ok().build();
+    }
+
+
 }

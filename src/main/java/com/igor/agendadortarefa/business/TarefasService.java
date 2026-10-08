@@ -4,6 +4,7 @@ import com.igor.agendadortarefa.business.dto.TarefasDTO;
 import com.igor.agendadortarefa.business.mapper.TarefasConverter;
 import com.igor.agendadortarefa.infrastructure.entity.TarefasEntity;
 import com.igor.agendadortarefa.infrastructure.enums.StatusNotificacaoEnum;
+import com.igor.agendadortarefa.infrastructure.exeception.ResourceNotFoundExeception;
 import com.igor.agendadortarefa.infrastructure.repository.TarefasRepository;
 import com.igor.agendadortarefa.infrastructure.security.JwtUtil;
 import io.jsonwebtoken.Jwt;
@@ -44,4 +45,13 @@ public class TarefasService {
 
     return tarefaConverter.paraListaTarefasDTO(listaTarefas);
     }
+
+    public void deletaTarefaPorID (String id){
+       try{
+        tarefasRepository.deleteById(id);
+       }catch (ResourceNotFoundExeception e){
+           throw new ResourceNotFoundExeception("Error ao deletar a tarefa por ID, ID nao existente" + id,
+                   e.getCause());
+       }
+       }
 }
